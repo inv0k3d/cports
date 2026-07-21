@@ -1,5 +1,5 @@
 pkgname = "tor"
-pkgver = "0.4.8.16"
+pkgver = "0.4.9.11"
 pkgrel = 0
 build_style = "gnu_configure"
 hostmakedepends = [
@@ -8,6 +8,7 @@ hostmakedepends = [
     "pkgconf",
 ]
 makedepends = [
+    "dinit-chimera",
     "libevent-devel",
     "openssl3-devel",
     "xz-devel",
@@ -18,9 +19,9 @@ pkgdesc = "Anonymizing overlay network"
 license = "BSD-3-Clause"
 url = "https://gitlab.com/torproject/tor"
 source = f"{url}/-/archive/tor-{pkgver}/tor-tor-{pkgver}.tar.gz"
-sha256 = "2964e2c3c7ebc9534595e59e29938e5446334510fdb912009cd877258898bfeb"
+sha256 = "5dcc2e0808674c9fdb8ff6032a8c8d5467211bc5ac225ddaf6a4e2484139baec"
 # requires shellcheck
-options = ["!check"]
+options = ["etcfiles", "!check"]
 
 
 def post_install(self):
